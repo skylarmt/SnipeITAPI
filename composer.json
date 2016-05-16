@@ -1,0 +1,13 @@
+{
+    "name": "vendor/snipe-i-t-mobile-a-p-i",
+    "description": "Description of project SnipeITMobileAPI.",
+    "authors": [
+        {
+            "name": "skylar",
+            "email": "your@email.here"
+        }
+    ],
+    "require": {
+        "catfan/medoo": "^1.0"
+    }
+}
