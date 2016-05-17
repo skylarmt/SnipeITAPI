@@ -3,6 +3,7 @@
 require 'required.php';
 require 'dieifnotloggedin.php';
 
+$from = $_GET['from'];
 require 'readfrom.php';
 
 $id = $_GET['id'];

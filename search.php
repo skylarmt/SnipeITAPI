@@ -5,6 +5,7 @@ require 'required.php';
 require 'dieifnotloggedin.php';
 
 $q = $_GET['q'];
+$from = $_GET['from'];
 require 'readfrom.php';
 
 if (is_empty($q)) {

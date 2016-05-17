@@ -1,8 +1,6 @@
 <?php
 
-$from = 'assets';
-
-switch ($_GET['from']) {
+switch ($from) {
     case 'accessories':
     case 'accessory':
     case 'acc':
