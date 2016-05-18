@@ -7,18 +7,18 @@ $from = $_GET['from'];
 require 'readfrom.php';
 
 $id = $_GET['id'];
-if (is_empty($id)) {
-    sendError('Missing item ID!');
-}
-$loc;
-if ($from == 'assets') {
-    $loc = $database->select($from, 'rtd_location_id', ['id' => $id])[0];
+if (is_empty($id) || $id == 0 || $id == null) {
+    $loc = '0';
 } else {
-    $loc = $database->select($from, 'location_id', ['id' => $id])[0];
-}
+    if ($from == 'assets') {
+        $loc = $database->select($from, 'rtd_location_id', ['id' => $id])[0];
+    } else {
+        $loc = $database->select($from, 'location_id', ['id' => $id])[0];
+    }
 
-if ($loc == null) {
-    $loc = 0;
+    if ($loc == null) {
+        $loc = 0;
+    }
 }
 
 $list = $database->select('locations', ['id', 'name']);

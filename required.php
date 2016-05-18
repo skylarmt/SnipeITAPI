@@ -39,11 +39,12 @@ function authenticate_user($username, $password) {
     global $database;
     $qf = 'username';
     if (!username_exists($username)) {
-        if (!email_exists($username)) {
-            return false;
-        } else {
-            $qf = 'email';
-        }
+//        if (!email_exists($username)) {
+//            return false;
+//        } else {
+//            $qf = 'email';
+//        }
+        return false;
     }
     $hash = $database->select('users', ['password'], [$qf => $username])[0]['password'];
     return (password_verify($password, $hash));
