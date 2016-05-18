@@ -19,6 +19,10 @@ if ($from == 'assets') {
     $results = $database->select($from, '*', ['OR' => ['name[~]' => $q, 'order_number[~]' => $q]]);
 }
 
+if ($results == false) {
+    $results = [];
+}
+
 //var_dump($database->error());
 //var_dump($results);
 
