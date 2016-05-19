@@ -7,7 +7,7 @@ $from = $_POST['from'];
 require 'readfrom.php';
 
 $id = $_POST['id'];
-if (is_empty($_POST['asset_tag'])) {
+if (is_empty($_POST['asset_tag']) && $from == 'assets') {
     sendError('Please fill in an asset tag.');
 }
 
