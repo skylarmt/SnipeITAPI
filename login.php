@@ -8,7 +8,7 @@ $user = $_POST['user'];
 $pass = $_POST['pass'];
 
 if (is_empty($user)) {
-    sendError("Missing username or email.");
+    sendError("Missing username.");
 }
 
 if (is_empty($pass)) {
