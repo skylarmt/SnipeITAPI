@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Get all the models.
+ */
 require 'required.php';
 //require 'dieifnotloggedin.php';
 

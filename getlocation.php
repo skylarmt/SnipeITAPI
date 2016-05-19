@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Get a list of all locations, and the location for a given id if any.
+ */
 require 'required.php';
 //require 'dieifnotloggedin.php';
 

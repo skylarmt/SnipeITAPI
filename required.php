@@ -1,12 +1,16 @@
 <?php
 
-ob_start();
+ob_start(); // No worries about sending headers before/after content
 session_start();
-require 'vendor/autoload.php';
-require 'database.php';
 
-define('JSON', true);
-header('Content-Type: application/json');
+require 'vendor/autoload.php'; // Load database stuff from Composer
+require 'database.php'; // Load database settings
+
+define('JSON', true); // Don't touch this or Something Bad might happen.
+header('Content-Type: application/json'); // Don't touch this either.
+
+// Completely disable CORS stuff, everything is allowed.  You could change this
+// if you know exactly what domain traffic is coming from.
 header('Access-Control-Allow-Origin: ' . $_SERVER['HTTP_ORIGIN']);
 header('Access-Control-Allow-Credentials: true');
 
@@ -39,11 +43,6 @@ function authenticate_user($username, $password) {
     global $database;
     $qf = 'username';
     if (!username_exists($username)) {
-//        if (!email_exists($username)) {
-//            return false;
-//        } else {
-//            $qf = 'email';
-//        }
         return false;
     }
     $hash = $database->select('users', ['password'], [$qf => $username])[0]['password'];
@@ -59,6 +58,11 @@ function is_empty($str) {
     return (!isset($str) || $str == '' || $str == null);
 }
 
+/**
+ * Send a generic OK message.
+ * @param string $message Optional message text.
+ * @param boolean $die End execution after sending message (default true).
+ */
 function sendOK($message = "", $die = true) {
     if (!is_empty($message) && JSON) {
         echo '{ "status": "OK", "message": "' . $message . '" }';
@@ -74,6 +78,11 @@ function sendOK($message = "", $die = true) {
     }
 }
 
+/**
+ * Send an error message.
+ * @param string $error Error text.
+ * @param boolean $die End execution after sending error (default true).
+ */
 function sendError($error, $die = true) {
     if (JSON) {
         echo '{ "status": "ERROR", "message": "' . $error . '" }';

@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Dump a database row for a given asset/accessory/consumable
+ */
 require 'required.php';
 require 'dieifnotloggedin.php';
 

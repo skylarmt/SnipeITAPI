@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * Get all status types.
+ */
 require 'required.php';
 //require 'dieifnotloggedin.php';
 

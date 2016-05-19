@@ -1,7 +1,10 @@
 <?php
-
+/**
+ * Handles login requests, authentication, and session creation.
+ */
 require 'required.php';
 
+// For lazy browser testing
 //$_POST = $_GET;
 
 $user = $_POST['user'];
