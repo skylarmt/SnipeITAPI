@@ -1,10 +1,10 @@
 {
-    "name": "vendor/snipe-i-t-mobile-a-p-i",
-    "description": "Description of project SnipeITMobileAPI.",
+    "name": "netsyms/snipeit-mobile-api",
+    "description": "Mobile API server for SnipeIT.",
     "authors": [
         {
-            "name": "skylar",
-            "email": "your@email.here"
+            "name": "Skylar Ittner",
+            "email": "admin@netsyms.com"
         }
     ],
     "require": {
